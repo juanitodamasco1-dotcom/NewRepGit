@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Yes / No Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f4f8;
+            color: #1e293b;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p.prompt {
+            color: #64748b;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        #yesBtn {
+            background-color: #10b981;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background-color: #059669;
+        }
+
+        #noBtn {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        #noBtn:hover {
+            background-color: #dc2626;
+        }
+
+        .status-box {
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        .status-box.success {
+            display: block;
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #34d399;
+        }
+
+        .status-box.failed {
+            display: block;
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #f87171;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Confirm Action</h1>
+        <p class="prompt">Would you like to proceed with the operation?</p>
+
+        <div class="button-group">
+            <button id="yesBtn" type="button">Yes</button>
+            <button id="noBtn" type="button">No</button>
+        </div>
+
+        <div id="resultMessage" class="status-box"></div>
+    </div>
+
+    <script src="./sample.js"></script>
+</body>
+</html>
